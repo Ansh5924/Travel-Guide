@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Sunnyvale Travel Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Sunnyvale Travel Guide</div>
+        <div class="nav-links" role="navigation" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html" aria-current="page">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top:14px">
+    <section class="page">
+      <h1>Contact</h1>
+
+      <div class="card" style="max-width:650px;margin-top:12px">
+        <form id="contact-form" class="contact-form">
+          <label>
+            <span class="muted">Your name</span>
+            <input id="cname" type="text" placeholder="Your name" required>
+          </label>
+          <label>
+            <span class="muted">Your email</span>
+            <input id="cemail" type="email" placeholder="Your email" required>
+          </label>
+          <label>
+            <span class="muted">Message</span>
+            <textarea id="cmessage" placeholder="Message" rows="4"></textarea>
+          </label>
+          <button type="submit">Send</button>
+        </form>
+        <div id="contact-result" class="muted" style="margin-top:8px"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Sunnyvale Travel Guide — Beginner Project.</p>
+    </div>
+  </footer>
+
+  <script src="scripts.js"></script>
+</body>
+</html>
