@@ -17,14 +17,13 @@ function el(tag, attrs = {}, children = []){
   for (let k in attrs){
     if (k === 'class') e.className = attrs[k];
     else if (k === 'text') e.textContent = attrs[k];
-    else if (k === 'html') e.innerHTML = attrs[k]; // use only when trusted
+    else if (k === 'html') e.innerHTML = attrs[k]; 
     else e.setAttribute(k, attrs[k]);
   }
   (children || []).forEach(c => e.appendChild(c));
   return e;
 }
 
-// Rendering
 function renderAttractions(containerSelector = '#attractions-list', filter = 'all', query = ''){
   const container = $q(containerSelector);
   if(!container) return;
@@ -88,7 +87,6 @@ function renderGallery(containerSelector = '#gallery-grid'){
   });
 }
 
-// Modal and favorites
 const modal = { el: null, content: null, lastFocused: null };
 function setupModal(){
   modal.el = $q('#modal');
@@ -121,7 +119,7 @@ function openModal(a){
   modal.content.appendChild(row);
   modal.el.classList.add('open');
   modal.el.setAttribute('aria-hidden','false');
-  // focus management
+  
   const focusable = modal.content.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
   if(focusable) focusable.focus();
 }
@@ -132,7 +130,6 @@ function closeModal(){
   if(modal.lastFocused) modal.lastFocused.focus();
 }
 
-// favorites
 function saveFavorite(id){
   let fav = JSON.parse(localStorage.getItem('sny_fav') || '[]');
   if(fav.includes(id)) fav = fav.filter(x=>x!==id); else fav.push(id);
@@ -159,7 +156,6 @@ function updateFavUI(){
   });
 }
 
-// contact form (works on contact.html)
 function setupContactForm(){
   const form = $q('#contact-form');
   if(!form) return;
@@ -175,10 +171,8 @@ function setupContactForm(){
   });
 }
 
-// simple debounce
 function debounce(fn, wait=200){ let t; return (...args)=> { clearTimeout(t); t = setTimeout(()=>fn(...args), wait); }; }
 
-// search & filters setup
 function setupSearchAndFilters(){
   const search = $q('#search-home');
   if(search){
@@ -200,7 +194,6 @@ function setupSearchAndFilters(){
   });
 }
 
-// init
 function init(){
   renderAttractions();
   renderHighlights();
