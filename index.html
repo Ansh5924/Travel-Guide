@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sunnyvale — Travel Guide</title>
+  <meta name="description" content="Sunnyvale Travel Guide — student project" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <div class="brand">Sunnyvale Travel Guide</div>
+        <div class="nav-links" role="navigation" aria-label="Main navigation">
+          <a href="index.html" aria-current="page">Home</a>
+          <a href="about.html">About</a>
+          <a href="contact.html">Contact</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container" style="margin-top:14px">
+    <section id="page-home" class="page">
+      <div class="hero">
+        <div class="hero-left">
+          <h1>Welcome to Sunnyvale</h1>
+          <p>Sunnyvale is a fictional coastal town used as an example destination. This site demonstrates a beginner-friendly travel guide built with HTML, CSS and JS.</p>
+          <div style="margin-top:10px">
+            <a class="cta" href="#attractions">See Attractions</a>
+            <button class="cta" id="start-tour" style="margin-left:10px;background:#ffd166;color:#222;border:0">Start Quick Tour</button>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div style="background:#fff;padding:12px;border-radius:8px;box-shadow:0 6px 14px rgba(0,0,0,0.06)">
+            <h3>Quick Info</h3>
+            <p class="muted">Best time to visit: Oct — Mar</p>
+            <p class="muted">Currency: Sunny (SNY) — fictional</p>
+            <p class="muted">Language: English</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid" style="margin-top:12px">
+        <section aria-live="polite">
+          <h2>Highlights</h2>
+          <div class="attractions" id="highlights"></div>
+        </section>
+        <aside>
+          <div class="card">
+            <h3>Search Attractions</h3>
+            <input id="search-home" type="search" placeholder="Search by name or tag" style="width:100%;padding:8px;border-radius:6px;border:1px solid #ddd;margin-top:8px">
+            <p class="muted" style="margin-top:8px">Tip: try "beach" or "museum"</p>
+          </div>
+
+          <div class="card" style="margin-top:12px">
+            <h3>Favorites</h3>
+            <div id="favorites" class="muted">No favorites yet — click "Save" on an attraction to add.</div>
+          </div>
+        </aside>
+      </div>
+
+      <div style="margin-top:18px">
+        <h2>All Attractions</h2>
+        <div class="filters" aria-label="filters">
+          <button data-filter="all" class="active">All</button>
+          <button data-filter="nature">Nature</button>
+          <button data-filter="history">History</button>
+          <button data-filter="food">Food</button>
+          <button data-filter="family">Family</button>
+        </div>
+
+        <div class="attractions" id="attractions-list"></div>
+      </div>
+
+      <div style="margin-top:18px">
+        <h2>Gallery</h2>
+        <div class="gallery" id="gallery-grid"></div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Sunnyvale Travel Guide — Beginner Project.</p>
+    </div>
+  </footer>
+
+  <!-- Modal for attraction quick view -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-hidden="true" aria-labelledby="modal-title">
+    <div class="box" role="document">
+      <button id="close-modal" aria-label="Close modal" style="float:right;background:#eee;border:0;padding:6px;border-radius:50%">×</button>
+      <div id="modal-content"></div>
+    </div>
+  </div>
+
+  <script src="scripts.js"></script>
+  <script>
+    document.getElementById('start-tour')?.addEventListener('click', ()=>{
+      document.querySelectorAll('#highlights .card button')[0]?.click();
+    });
+  </script>
+</body>
+</html>
