@@ -4,7 +4,3 @@
 This project was created as a college assignment to demonstrate responsive layout, basic client-side interactivity (search/filters/modal).
 
 ---
-
-
-## What’s inside
-
