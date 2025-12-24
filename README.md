@@ -5,15 +5,3 @@ This project was created as a college assignment to demonstrate responsive layou
 
 ---
 Website Link - https://travel-guide-web5924.netlify.app/
-
-FILE STRUCTURE
-
-Travel-Guide/
-│
-├── backend.php
-│
-├── index.html
-├── about.html
-├── contact.html
-├── styles.css
-└── scripts.js
